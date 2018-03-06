@@ -29,8 +29,10 @@ class FundingChips extends Component {
 
     const styles = {
       container: {
-        height: '508px',
-        position: 'relative'
+        height: '506px',
+        position: 'relative',
+        borderStyle: 'solid',
+        borderWidth: '2px',
       },
       box: {
         position: 'relative',
@@ -40,12 +42,16 @@ class FundingChips extends Component {
       },
       boxBottom: {
         position: 'relative',
-        borderStyle: 'none solid solid solid',
-        borderWidth: '2px',
         height: '250px'
       },
-      title: {
+      fund: {
         fontSize: '25px',
+        height: '250px',
+      },
+      dontFund: {
+        fontSize: '25px',
+        borderWidth: '2px',
+        borderStyle: 'solid none none none',
       }
     };
 
@@ -53,15 +59,11 @@ class FundingChips extends Component {
 
     return (
       <div style={styles.container}>
-        <div style={styles.box}>
-          <div style={styles.title}>
-            Fund
-          </div>
+        <div style={styles.fund}>
+          Fund
         </div>
-        <div style={styles.boxBottom}>
-          <div style={styles.title}>
-            Don't Fund
-          </div>
+        <div style={styles.dontFund}>
+          Don't Fund
         </div>
         {chips}
       </div>

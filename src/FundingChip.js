@@ -8,6 +8,7 @@ class FundingChip extends Component {
     this.state = {
       x: props.chip.x,
       y: props.chip.y,
+      fund: props.chip.fund,
     };
 
     this.handleDrag = this.handleDrag.bind(this);
@@ -22,7 +23,22 @@ class FundingChip extends Component {
   };
 
   async onDragStop(){
-    console.log('stop!')
+    if(this.state.y < -29 && this.state.y > -49){
+      this.setState({
+        x: 0,
+        y: 0,
+      });
+    } else if (this.state.y > -29){
+      this.setState({
+        fund: false,
+      });
+    } else if (this.state.y < -49){
+      this.setState({
+        fund: true,
+      });
+    }
+
+    console.log('stop dragging! x:',this.state.x, 'y:', this.state.y, 'fund:', this.state.fund);
   }
 
 

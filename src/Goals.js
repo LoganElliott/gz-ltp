@@ -9,13 +9,18 @@ class Goals extends Component {
     super(props);
     this.state = {
       goal: false,
-    }
+      transportCheck: false,
+      housingCheck: false,
+      environmentCheck: false,
+    };
+
+    this.updateCheck.bind(this);
   }
 
-  updateCheck() {
+  updateCheck(checkboxId) {
     this.setState((oldState) => {
       return {
-        checked: !oldState.checked,
+        [checkboxId]: !oldState[checkboxId],
       };
     });
   }
@@ -38,7 +43,7 @@ class Goals extends Component {
     return (
       <div className="App">
         <div>
-          <img src={transportIcon}/>
+          <img src={transportIcon} alt='Transport section icon'/>
           <h2>
             Transport
           </h2>
@@ -54,14 +59,14 @@ class Goals extends Component {
           <div style={styles.checkboxContainer}>
             <Checkbox
               label={"I support these Transport Goals"}
-              checked={this.state.checked}
-              onCheck={this.updateCheck.bind(this)}
+              checked={this.state.transportCheck}
+              onCheck={() => this.updateCheck('transportCheck')}
               style={styles.checkbox}
             />
           </div>
         </div>
         <div>
-          <img src={housingIcon}/>
+          <img src={housingIcon}  alt='Housing section icon'/>
           <h2>
             Housing
           </h2>
@@ -77,14 +82,14 @@ class Goals extends Component {
           <div style={styles.checkboxContainer}>
             <Checkbox
               label={"I support these Housing Goals"}
-              checked={this.state.checked}
-              onCheck={this.updateCheck.bind(this)}
+              checked={this.state.housingCheck}
+              onCheck={() => this.updateCheck('housingCheck')}
               style={styles.checkbox}
             />
           </div>
         </div>
         <div>
-          <img src={environmentIcon}/>
+          <img src={environmentIcon}  alt='Environment section icon'/>
           <h2>
             Environment
           </h2>
@@ -100,8 +105,8 @@ class Goals extends Component {
           <div style={styles.checkboxContainer}>
             <Checkbox
               label={"I support these Environment Goals"}
-              checked={this.state.checked}
-              onCheck={this.updateCheck.bind(this)}
+              checked={this.state.environmentCheck}
+              onCheck={() => this.updateCheck('environmentCheck')}
               style={styles.checkbox}
             />
           </div>

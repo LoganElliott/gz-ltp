@@ -12,7 +12,7 @@ class App extends Component {
 
     return (
       <div className="App" style={container}>
-        <img src={gzLogo}/>
+        <img src={gzLogo} alt='Generation Zero Logo'/>
         <h1>
           Long Term Plan Submission
         </h1>
