@@ -23,7 +23,7 @@ class FundingChip extends Component {
   };
 
   async onDragStop(){
-    if(this.state.y < -29 && this.state.y > -49){
+    if(this.state.y < -35 && this.state.y > -69){
       this.setState({
         x: 0,
         y: 0,
@@ -46,7 +46,10 @@ class FundingChip extends Component {
     const styles = {
       chip: {
         backgroundColor: 'lightBlue',
-        width: '100px'
+        display: 'inline-flex',
+        margin: '10px',
+        padding: '5px',
+        borderRadius: '10px'
       }
     };
 
