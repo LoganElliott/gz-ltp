@@ -1,8 +1,8 @@
 import React from 'react'
 import Checkbox from 'material-ui/Checkbox';
+import fuelTax from './images/Fuel-Tax.png.png';
 import waterLevy from './images/Water-Levy.png';
 import treeLevy from './images/Tree-Levy.png';
-import transport from './images/Transport.png';
 
 class BigQuestions extends React.Component {
   constructor(props){
@@ -14,7 +14,7 @@ class BigQuestions extends React.Component {
           key: 'fossilFuelTax',
           label: '10c per litre “Fossil Fuel Tax” to fund the public transport Auckland desperately needs. Less pollution & traffic. More transport freedom.',
           checked: true,
-          image: transport
+          image: fuelTax
         },
         waterInfrastructureTax: {
           key: 'waterInfrastructureTax',
@@ -91,7 +91,7 @@ class BigQuestions extends React.Component {
           {Object.keys(this.state.bigChoices).map(bigChoicesCheckboxKey => {
             return (
               <div style={styles.container} key={bigChoicesCheckboxKey}>
-                <img style={styles.image} src={this.state.bigChoices[bigChoicesCheckboxKey].image}/>
+                <img style={styles.image} src={this.state.bigChoices[bigChoicesCheckboxKey].image} alt={this.state.bigChoices[bigChoicesCheckboxKey].label}/>
                 <div style={styles.text}>
                   -{this.state.bigChoices[bigChoicesCheckboxKey].label}
                 </div>
