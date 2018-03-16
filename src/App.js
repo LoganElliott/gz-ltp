@@ -49,56 +49,71 @@ class App extends Component {
             key: 'lightRail',
             label: 'A Light Rail Network including from the City to the Airport and North West Auckland',
             checked: true,
+            type: 'transport',
           },
           busway: {
             key: 'busway',
             label: 'Busways to serve East Auckland and North Shore',
             checked: true,
+            type: 'transport',
           },
           frequentRail: {
             key: 'frequentRail',
             label: 'More frequent rail services across Auckland',
             checked: true,
+            type: 'transport',
           },
           cycleNetwork: {
             key: 'cycleNetwork',
             label: 'Safe, separated cycle network',
             checked: true,
+            type: 'transport',
           },
           frequentBus: {
             key: 'frequentBus',
             label: 'Faster, more frequent bus services across Auckland',
             checked: true,
+            type: 'transport',
           },
           safeStreets: {
             key: 'safeStreets',
             label: 'Safer streets so people can easily walk around their neighbourhood',
             checked: true,
+            type: 'transport',
           },
           safetyUpgrades: {
             key: 'safetyUpgrades',
             label: 'Safety upgrades to save lives on our rural roads',
             checked: true,
+            type: 'transport',
           }
         },
         housingCheckboxes: {
           communityFunding: {
+            key: 'communityFunding',
             label: 'Funding for community facilities & quality public spaces where major housing growth is proposed in our town centres',
             checked: true,
+            type: 'transport',
           },
           publicSpaces: {
+            key: 'publicSpaces',
             label: 'Invest in City Centre public spaces (like the Linear Park) to provide for our fast growing population in the City Centre',
             checked: true,
+            type: 'transport',
           },
         },
         notProceedCheckboxes: {
           lincolnRoad: {
+            key: 'lincolnRoad',
             label: 'Major road widening projects like Lincoln Road',
             checked: true,
+            type: 'notProceed',
           },
           millRoad: {
+            key: 'millRoad',
             label: 'New rural motorways like Mill Road',
             checked: true,
+            type: 'notProceed',
           },
         },
         extraTransportProjectsSupport: '',
@@ -215,47 +230,80 @@ class App extends Component {
       myHeaders.append('Authorization', 'Basic ' + btoa(username + ":" + password));
 
       const dataToSend = {
-        userInformation: {
-          firstName: this.state.userInformation.firstName,
-          lastName: this.state.userInformation.lastName,
-          email: this.state.userInformation.email,
-          localBoard: this.state.userInformation.localBoard,
-          receiveGZEmail: this.state.userInformation.receiveGZEmail,
-        },
-        bigChoices: {
-          fossilFuelTax: this.state.bigChoices.fossilFuelTax.checked,
-          waterInfrastructureTax: this.state.bigChoices.waterInfrastructureTax.checked,
-          environmentTargetedRate: this.state.bigChoices.environmentTargetedRate.checked,
-        },
-        goals: {
-          transportCheck: this.state.goals.transportCheck,
-          housingCheck: this.state.goals.housingCheck,
-          environmentCheck: this.state.goals.environmentCheck,
-        },
-        projects: {
-          transportCheckboxes: {
-            lightRail: this.state.projects.transportCheckboxes.lightRail.checked,
-            busway: this.state.projects.transportCheckboxes.busway.checked,
-            frequentRail: this.state.projects.transportCheckboxes.frequentRail.checked,
-            cycleNetwork: this.state.projects.transportCheckboxes.cycleNetwork.checked,
-            frequentBus: this.state.projects.transportCheckboxes.frequentBus.checked,
-            safeStreets: this.state.projects.transportCheckboxes.safeStreets.checked,
-            safetyUpgrades: this.state.projects.transportCheckboxes.safetyUpgrades.checked,
+        firstName: this.state.userInformation.firstName,
+        lastName: this.state.userInformation.lastName,
+        email: this.state.userInformation.email,
+        localBoard: this.state.userInformation.localBoard,
+        receiveGZEmail: this.state.userInformation.receiveGZEmail,
+        fossilFuelTax: this.state.bigChoices.fossilFuelTax.checked,
+        waterInfrastructureTax: this.state.bigChoices.waterInfrastructureTax.checked,
+        environmentTargetedRate: this.state.bigChoices.environmentTargetedRate.checked,
+        transportCheck: this.state.goals.transportCheck,
+        housingCheck: this.state.goals.housingCheck,
+        environmentCheck: this.state.goals.environmentCheck,
+        checkboxes: [
+          {
+            key: this.state.projects.transportCheckboxes.lightRail.key,
+            checked: this.state.projects.transportCheckboxes.lightRail.checked,
+            type: this.state.projects.transportCheckboxes.lightRail.type,
           },
-          housingCheckboxes: {
-            communityFunding: this.state.projects.housingCheckboxes.communityFunding.checked,
-            publicSpaces: this.state.projects.housingCheckboxes.publicSpaces.checked,
+          {
+            key: this.state.projects.transportCheckboxes.busway.key,
+            checked: this.state.projects.transportCheckboxes.busway.checked,
+            type: this.state.projects.transportCheckboxes.busway.type,
           },
-          notProceedCheckboxes: {
-            lincolnRoad: this.state.projects.notProceedCheckboxes.lincolnRoad.checked,
-            millRoad: this.state.projects.notProceedCheckboxes.millRoad.checked,
+          {
+            key: this.state.projects.transportCheckboxes.frequentRail.key,
+            checked: this.state.projects.transportCheckboxes.frequentRail.checked,
+            type: this.state.projects.transportCheckboxes.frequentRail.type,
           },
-          extraTransportProjectsSupport: this.state.projects.extraTransportProjectsSupport,
-          extraTransportProjectsDoNotSupport: this.state.projects.extraTransportProjectsDoNotSupport,
-          extraEnvironmentalProjects: this.state.projects.extraEnvironmentalProjects,
-          extraHousingProjects: this.state.projects.extraHousingProjects,
-          otherComments: this.state.projects.otherComments,
-        }
+          {
+            key: this.state.projects.transportCheckboxes.cycleNetwork.key,
+            checked: this.state.projects.transportCheckboxes.cycleNetwork.checked,
+            type: this.state.projects.transportCheckboxes.cycleNetwork.type,
+          },
+          {
+            key: this.state.projects.transportCheckboxes.frequentBus.key,
+            checked: this.state.projects.transportCheckboxes.frequentBus.checked,
+            type: this.state.projects.transportCheckboxes.frequentBus.type,
+          },
+          {
+            key: this.state.projects.transportCheckboxes.safeStreets.key,
+            checked: this.state.projects.transportCheckboxes.safeStreets.checked,
+            type: this.state.projects.transportCheckboxes.safeStreets.type,
+          },
+          {
+            key: this.state.projects.transportCheckboxes.safetyUpgrades.key,
+            checked: this.state.projects.transportCheckboxes.safetyUpgrades.checked,
+            type: this.state.projects.transportCheckboxes.safetyUpgrades.type,
+          },
+          {
+            key: this.state.projects.housingCheckboxes.communityFunding.key,
+            checked: this.state.projects.housingCheckboxes.communityFunding.checked,
+            type: this.state.projects.housingCheckboxes.communityFunding.type,
+          },
+          {
+            key: this.state.projects.housingCheckboxes.publicSpaces.key,
+            checked: this.state.projects.housingCheckboxes.publicSpaces.checked,
+            type: this.state.projects.housingCheckboxes.publicSpaces.type,
+          },
+          {
+            key: this.state.projects.notProceedCheckboxes.lincolnRoad.key,
+            checked: this.state.projects.notProceedCheckboxes.lincolnRoad.checked,
+            type: this.state.projects.notProceedCheckboxes.lincolnRoad.type,
+          },
+          {
+            key: this.state.projects.notProceedCheckboxes.millRoad.key,
+            checked: this.state.projects.notProceedCheckboxes.millRoad.checked,
+            type: this.state.projects.notProceedCheckboxes.millRoad.type,
+          }
+
+        ],
+        extraTransportProjectsSupport: this.state.projects.extraTransportProjectsSupport,
+        extraTransportProjectsDoNotSupport: this.state.projects.extraTransportProjectsDoNotSupport,
+        extraEnvironmentalProjects: this.state.projects.extraEnvironmentalProjects,
+        extraHousingProjects: this.state.projects.extraHousingProjects,
+        otherComments: this.state.projects.otherComments,
       };
 
       const myInit = {
