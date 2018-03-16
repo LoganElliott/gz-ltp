@@ -34,7 +34,7 @@ class Goals extends Component {
         padding: '10px',
       },
       checkbox: {
-        maxWidth: 300,
+        maxWidth: '350px',
       },
       checkboxContainer: {
         display: 'flex',

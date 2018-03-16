@@ -278,11 +278,19 @@ class App extends Component {
       title: {
         fontSize: '50px',
         color: 'white',
+        padding: '10px',
       },
       subTitle: {
         fontSize: '18px',
         color: 'white',
         fontFamily: 'Gotham-Light',
+        padding: '10px',
+      },
+      intro: {
+        fontSize: '16px',
+        color: 'white',
+        fontFamily: 'Gotham-Light',
+        padding: '10px',
       },
       container: {
         display: 'flex',
@@ -303,7 +311,7 @@ class App extends Component {
           <div style={styles.title}>FIX OUR CITY </div>
           <div style={styles.subTitle}> QUICK SUBMIT ON THE AUCKLAND LONG TERM PLAN 2018 </div>
         </div>
-        <div>
+        <div style={styles.intro}>
           Auckland Council is consulting of their plans for our city over the next 10 years.
           We’ve made it really easy for you to submit on key issues, just follow our form below.
         </div>

@@ -5,7 +5,7 @@ class BigQuestions extends React.Component {
   render() {
     const styles = {
       bigQuestionsText: {
-        fontSize: '50px',
+        fontSize: '60px',
         color: 'white'
       },
       container: {

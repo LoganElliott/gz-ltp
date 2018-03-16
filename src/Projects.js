@@ -9,16 +9,21 @@ class Projects extends Component {
         color: 'white'
       },
       title: {
-        fontSize: '40px',
+        fontSize: '60px',
         padding: '10px',
       },
       subTitle: {
         fontSize: '20px',
         padding: '10px',
+        fontFamily: 'Gotham-Light',
       },
       checkbox: {
         maxWidth: '400px',
-        padding: '10px',
+        margin: '10px',
+      },
+      textField: {
+        maxWidth: '350px',
+        margin: '10px 0 10px 0'
       },
       labelStyle: {
         fontFamily: 'Gotham-Light',
@@ -33,7 +38,13 @@ class Projects extends Component {
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
-      }
+      },
+      whatElse: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+      },
     };
 
     return (
@@ -71,7 +82,7 @@ class Projects extends Component {
                 multiLine={true}
                 value={this.props.projects.extraTransportProjectsSupport}
                 onChange={(event, newValue) => this.props.updateProjectsInputField('extraTransportProjectsSupport', newValue)}
-                style={styles.checkbox}
+                style={styles.textField}
                 hintStyle={styles.labelStyle}
               />
             </div>
@@ -99,7 +110,7 @@ class Projects extends Component {
                 multiLine={true}
                 value={this.props.projects.extraTransportProjectsDoNotSupport}
                 onChange={(event, newValue) => this.props.updateProjectsInputField('extraTransportProjectsDoNotSupport', newValue)}
-                style={styles.checkbox}
+                style={styles.textField}
                 hintStyle={styles.labelStyle}
               />
             </div>
@@ -126,7 +137,7 @@ class Projects extends Component {
               multiLine={true}
               value={this.props.projects.extraHousingProjects}
               onChange={(event, newValue) => this.props.updateProjectsInputField('extraHousingProjects', newValue)}
-              style={styles.checkbox}
+              style={styles.textField}
               hintStyle={styles.labelStyle}
             />
           </div>
@@ -141,13 +152,13 @@ class Projects extends Component {
                 multiLine={true}
                 value={this.props.projects.extraEnvironmentalProjects}
                 onChange={(event, newValue) => this.props.updateProjectsInputField('extraEnvironmentalProjects', newValue)}
-                style={styles.checkbox}
+                style={styles.textField}
                 hintStyle={styles.labelStyle}
               />
             </div>
           </div>
         </div>
-        <div>
+        <div style={styles.whatElse}>
           What else do you think Auckland Council should do to improve our city?
           <TextField
             fullWidth={true}
@@ -155,7 +166,7 @@ class Projects extends Component {
             multiLine={true}
             value={this.props.projects.otherComments}
             onChange={(event, newValue) => this.props.updateProjectsInputField('otherComments', newValue)}
-            style={styles.checkbox}
+            style={styles.textField}
             hintStyle={styles.labelStyle}
           />
         </div>
