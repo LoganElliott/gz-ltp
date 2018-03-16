@@ -7,44 +7,113 @@ class Projects extends Component {
     super(props);
 
     this.state = {
-      transportChips: [
-        'A Light Rail Network including from the City to the Airport and North West Auckland',
-        'Busways to serve East Auckland and North Shore',
-        'More frequent rail services across Auckland',
-        'Safe, separated cycle network',
-        'Faster, more frequent bus services across Auckland',
-        'Safer streets so people can easily walk around their neighbourhood',
-        'Safety upgrades to save lives on our rural roads',
-      ],
-      housingChips: [
-        'Funding for community facilities & quality public spaces where major housing growth is proposed in our town centres',
-        'Invest in City Centre public spaces (like the Linear Park) to provide for our fast growing population in the City Centre',
-      ],
-      notProceedChips: [
-        'Major road widening projects like Lincoln Road',
-        'New rural motorways like Mill Road'
-      ],
-      extraIdeas: [],
+      bigChoices: {
+        fossilFuelTax: {
+          key: 'fossilFuelTax',
+          label: '10c per litre “Fossil Fuel Tax” to fund the public transport Auckland desperately needs. Less pollution & traffic. More transport freedom.',
+          checked: true,
+        },
+        waterInfrastructureTax: {
+          key: 'waterInfrastructureTax',
+          label: 'Support a targeted rate to speed up the delivery of cleaner harbours, beaches and streams. Less poo. More swimming.',
+          checked: true,
+        },
+        environmentTargetedRate: {
+          key: 'environmentTargetedRate',
+          label: 'Support a targeted rate to invest in environmental initiatives such as tackling kauri dieback. Less death. More trees.',
+          checked: true,
+        }
+      },
+      transportCheckboxes: {
+        lightRail: {
+          key: 'lightRail',
+          label: 'A Light Rail Network including from the City to the Airport and North West Auckland',
+          checked: true,
+        },
+        busway: {
+          key: 'busway',
+          label: 'Busways to serve East Auckland and North Shore',
+          checked: true,
+        },
+        frequentRail: {
+          key: 'frequentRail',
+          label: 'More frequent rail services across Auckland',
+          checked: true,
+        },
+        cycleNetwork: {
+          key: 'cycleNetwork',
+          label: 'Safe, separated cycle network',
+          checked: true,
+        },
+        frequentBus: {
+          key: 'frequentBus',
+          label: 'Faster, more frequent bus services across Auckland',
+          checked: true,
+        },
+        safeStreets: {
+          key: 'safeStreets',
+          label: 'Safer streets so people can easily walk around their neighbourhood',
+          checked: true,
+        },
+        safetyUpgrades: {
+          key: 'safetyUpgrades',
+          label: 'Safety upgrades to save lives on our rural roads',
+          checked: true,
+        }
+      },
+      housingCheckboxes: {
+        communityFunding: {
+          label: 'Funding for community facilities & quality public spaces where major housing growth is proposed in our town centres',
+          checked: true,
+        },
+        publicSpaces: {
+          label: 'Invest in City Centre public spaces (like the Linear Park) to provide for our fast growing population in the City Centre',
+          checked: true,
+        },
+      },
+      notProceedCheckboxes: {
+        lincolnRoad: {
+          label: 'Major road widening projects like Lincoln Road',
+          checked: true,
+        },
+        millRoad: {
+          label: 'New rural motorways like Mill Road',
+          checked: true,
+        },
+      },
+      extraTransportProjectsSupport: '',
+      extraTransportProjectsDoNotSupport: '',
+      extraEnvironmentalProjects: '',
+      extraHousingProjects: '',
+      otherComments: '',
     };
 
-    this.handleAddChip.bind(this);
-    this.handleDeleteChip.bind(this);
+    this.updateCheckbox.bind(this);
+    this.updateInputField.bind(this);
   }
 
-  handleAddChip (chip) {
-    this.setState({
-      extraIdeas: [...this.state.extraIdeas, chip]
-    })
+  updateCheckbox(isInputChecked, sectionKey, checkboxKey) {
+    this.setState((oldState) => {
+      let checkboxToUpdate = oldState[sectionKey][checkboxKey];
+      checkboxToUpdate.checked = !checkboxToUpdate.checked;
+
+      return {
+        ...oldState,
+        [sectionKey]: {
+          ...oldState[sectionKey],
+          [checkboxKey]: checkboxToUpdate,
+        }
+      };
+    });
   }
 
-  handleDeleteChip (deletedChip) {
-    if (deletedChip !== 'js') {
-      this.setState({
-        extraIdeas: this.state.extraIdeas.filter((c) => c !== deletedChip)
-      })
-    } else {
-      alert('Why would you delete JS?')
-    }
+  updateInputField(textBoxKey, value){
+    this.setState((oldState) => {
+      return {
+        ...oldState,
+        [textBoxKey]: value
+      };
+    });
   }
 
   render() {
@@ -62,9 +131,14 @@ class Projects extends Component {
           <div>
             There are three big questions Auckland Council is asking that may means you have to pay a little extra for improvements. We think these are good ideas, do you agree?
           </div>
-          <Checkbox label={'10c per litre “Fossil Fuel Tax” to fund the public transport Auckland desperately needs. Less pollution & traffic. More transport freedom.  '}/>
-          <Checkbox label={'Support a targeted rate to speed up the delivery of cleaner harbours, beaches and streams. Less poo. More swimming.'}/>
-          <Checkbox label={'Support a targeted rate to invest in environmental initiatives such as tackling kauri dieback. Less death. More trees. '}/>
+          {Object.keys(this.state.bigChoices).map(bigChoicesCheckboxKey => {
+            return <Checkbox
+            checked={this.state.bigChoices[bigChoicesCheckboxKey].checked}
+            onCheck={(event, isInputChecked) => this.updateCheckbox(isInputChecked, 'bigChoices', bigChoicesCheckboxKey)}
+            key={bigChoicesCheckboxKey}
+            label={this.state.bigChoices[bigChoicesCheckboxKey].label}
+            />
+          })}
         </div>
         <div>
           Auckland Council wants to know your views about where council should spend your money. Three key areas where council spends money are transport, housing (including community facilities) and the environment.
@@ -74,15 +148,26 @@ class Projects extends Component {
             What transport projects do you think should be prioritised in Auckland (we have suggested some but add your own too!)
           </div>
           <div>
-            {this.state.transportChips.map(transportChip => {
-              return <Checkbox key={transportChip} label={transportChip}/>
+            {Object.keys(this.state.transportCheckboxes).map(transportCheckboxKey => {
+              return <Checkbox
+                checked={this.state.transportCheckboxes[transportCheckboxKey].checked}
+                onCheck={(event, isInputChecked) => this.updateCheckbox(isInputChecked, 'transportCheckboxes', transportCheckboxKey)}
+                key={transportCheckboxKey}
+                label={this.state.transportCheckboxes[transportCheckboxKey].label}
+              />
             })}
           </div>
           <div>
             What other transport projects would you like to see built?
           </div>
           <div>
-            <TextField fullWidth={true} hintText={'Enter other projects'} multiLine={true}/>
+            <TextField
+              fullWidth={true}
+              hintText={'Enter other transport projects you support'}
+              multiLine={true}
+              value={this.state.extraTransportProjectsSupport}
+              onChange={(event, newValue) => this.updateInputField('extraTransportProjectsSupport', newValue)}
+            />
           </div>
         </div>
         <div>
@@ -90,12 +175,22 @@ class Projects extends Component {
             Are there any major transport projects that Auckland Council is proposing that you think should not proceed? (We’ve added a couple of expensive roading projects to give you ideas)
           </div>
           <div>
-            {this.state.notProceedChips.map(transportChip => {
-              return <Checkbox key={transportChip} label={transportChip}/>
+            {Object.keys(this.state.notProceedCheckboxes).map(notProceedCheckboxKey => {
+              return <Checkbox
+                checked={this.state.notProceedCheckboxes[notProceedCheckboxKey].checked}
+                onCheck={(event, isInputChecked) => this.updateCheckbox(isInputChecked, 'notProceedCheckboxes', notProceedCheckboxKey)}
+                key={notProceedCheckboxKey}
+                label={this.state.notProceedCheckboxes[notProceedCheckboxKey].label}/>
             })}
           </div>
           <div>
-            <TextField fullWidth={true} hintText={'Enter other transport projects'} multiLine={true}/>
+            <TextField
+              fullWidth={true}
+              hintText={'Enter other transport projects you don\'t support'}
+              multiLine={true}
+              value={this.state.extraTransportProjectsDoNotSupport}
+              onChange={(event, newValue) => this.updateInputField('extraTransportProjectsDoNotSupport', newValue)}
+            />
           </div>
         </div>
         <div>
@@ -103,7 +198,13 @@ class Projects extends Component {
             What other environmental initiatives do you think Auckland Council should spend more money on? (Tree planting? Community gardens? Waste & Recycling?):
           </div>
           <div>
-            <TextField fullWidth={true} hintText={'Enter environmental projects'} multiLine={true}/>
+            <TextField
+              fullWidth={true}
+              hintText={'Enter environmental projects'}
+              multiLine={true}
+              value={this.state.extraEnvironmentalProjects}
+              onChange={(event, newValue) => this.updateInputField('extraEnvironmentalProjects', newValue)}
+            />
           </div>
         </div>
         <div>
@@ -111,15 +212,31 @@ class Projects extends Component {
             Auckland Council facilitates the building of new housing in communities across the city. They also invest money to improve our local centres, which can benefit both existing residents (like yourself) and new people moving here. What projects do you think Auckland Council should focus on to encourage housing & improve our centres? (We’ve added a couple of suggestions to start you off!)
           </div>
           <div>
-            {this.state.housingChips.map(transportChip => {
-              return <Checkbox key={transportChip} label={transportChip}/>
+            {Object.keys(this.state.housingCheckboxes).map(housingCheckboxKey => {
+              return <Checkbox
+                checked={this.state.housingCheckboxes[housingCheckboxKey].checked}
+                onCheck={(event, isInputChecked) => this.updateCheckbox(isInputChecked, 'housingCheckboxes', housingCheckboxKey)}
+                key={housingCheckboxKey}
+                label={this.state.housingCheckboxes[housingCheckboxKey].label}/>
             })}
           </div>
-          <TextField fullWidth={true} hintText={'Enter other housing projects'} multiLine={true}/>
+          <TextField
+            fullWidth={true}
+            hintText={'Enter other housing projects'}
+            multiLine={true}
+            value={this.state.extraHousingProjects}
+            onChange={(event, newValue) => this.updateInputField('extraHousingProjects', newValue)}
+          />
         </div>
         <div>
           What else do you think Auckland Council should do to improve our city?
-          <TextField fullWidth={true} hintText={'How should we improve our city?'} multiLine={true}/>
+          <TextField
+            fullWidth={true}
+            hintText={'How should we improve our city?'}
+            multiLine={true}
+            value={this.state.otherComments}
+            onChange={(event, newValue) => this.updateInputField('otherComments', newValue)}
+          />
         </div>
       </div>
     )

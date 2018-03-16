@@ -8,7 +8,6 @@ class Goals extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      goal: false,
       transportCheck: false,
       housingCheck: false,
       environmentCheck: false,
