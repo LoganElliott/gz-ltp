@@ -18,7 +18,9 @@ class BigQuestions extends React.Component {
       },
       bigQuestions: {
         display: 'flex',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
       },
       image: {
         width: '300px',

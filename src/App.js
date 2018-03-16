@@ -168,13 +168,13 @@ class App extends Component {
     });
   }
 
-  updateUserInformationCheckbox(checkboxId) {
+  updateUserInformationCheckbox() {
     this.setState((oldState) => {
       return {
         ...oldState,
         userInformation: {
           ...oldState.userInformation,
-          [checkboxId]: !oldState.userInformation.receiveGZEmail,
+          receiveGZEmail: !oldState.userInformation.receiveGZEmail,
         }
       };
     });
