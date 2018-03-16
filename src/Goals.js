@@ -13,6 +13,7 @@ class Goals extends Component {
       title: {
         fontSize: '50px',
         padding: '10px',
+        paddingTop: '100px'
       },
       subTitle: {
         fontFamily: 'Gotham-Light',

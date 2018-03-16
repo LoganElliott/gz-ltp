@@ -11,6 +11,7 @@ class Projects extends Component {
       title: {
         fontSize: '55px',
         padding: '10px',
+        paddingTop: '100px'
       },
       subTitle: {
         fontSize: '20px',
