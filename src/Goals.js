@@ -5,25 +5,6 @@ import housingIcon from './images/icons/Housing-Icon.png';
 import environmentIcon from './images/icons/Environment-Icon.png';
 
 class Goals extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      transportCheck: false,
-      housingCheck: false,
-      environmentCheck: false,
-    };
-
-    this.updateCheck.bind(this);
-  }
-
-  updateCheck(checkboxId) {
-    this.setState((oldState) => {
-      return {
-        [checkboxId]: !oldState[checkboxId],
-      };
-    });
-  }
-
   render() {
     const styles = {
       checkbox: {
@@ -67,8 +48,8 @@ class Goals extends Component {
           <div style={styles.checkboxContainer}>
             <Checkbox
               label={"I support these Transport Goals"}
-              checked={this.state.transportCheck}
-              onCheck={() => this.updateCheck('transportCheck')}
+              checked={this.props.goals.transportCheck}
+              onCheck={() => this.props.updateGoalsCheckbox('transportCheck')}
               style={styles.checkbox}
             />
           </div>
@@ -93,8 +74,8 @@ class Goals extends Component {
           <div style={styles.checkboxContainer}>
             <Checkbox
               label={"I support these Housing Goals"}
-              checked={this.state.housingCheck}
-              onCheck={() => this.updateCheck('housingCheck')}
+              checked={this.props.goals.housingCheck}
+              onCheck={() => this.props.updateGoalsCheckbox('housingCheck')}
               style={styles.checkbox}
             />
           </div>
@@ -119,8 +100,8 @@ class Goals extends Component {
           <div style={styles.checkboxContainer}>
             <Checkbox
               label={"I support these Environment Goals"}
-              checked={this.state.environmentCheck}
-              onCheck={() => this.updateCheck('environmentCheck')}
+              checked={this.props.goals.environmentCheck}
+              onCheck={() => this.props.updateGoalsCheckbox('environmentCheck')}
               style={styles.checkbox}
             />
           </div>
