@@ -9,10 +9,6 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 const muiTheme = getMuiTheme({
   ...darkBaseTheme,
   fontFamily: 'Gotham-Bold',
-  palette: {
-    textColor: '#E8DAD8',
-
-  },
 });
 
 ReactDOM.render(

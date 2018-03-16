@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  color: #E8DAD8;
 }
 
 @font-face {
@@ -10,4 +9,9 @@
 
 body {
   font-family: 'Gotham-Bold';
+}
+
+@font-face {
+    font-family: Gotham-Light;
+    src: url("./Gotham-Light.otf") format("opentype");
 }

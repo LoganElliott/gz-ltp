@@ -7,23 +7,6 @@ class Projects extends Component {
     super(props);
 
     this.state = {
-      bigChoices: {
-        fossilFuelTax: {
-          key: 'fossilFuelTax',
-          label: '10c per litre “Fossil Fuel Tax” to fund the public transport Auckland desperately needs. Less pollution & traffic. More transport freedom.',
-          checked: true,
-        },
-        waterInfrastructureTax: {
-          key: 'waterInfrastructureTax',
-          label: 'Support a targeted rate to speed up the delivery of cleaner harbours, beaches and streams. Less poo. More swimming.',
-          checked: true,
-        },
-        environmentTargetedRate: {
-          key: 'environmentTargetedRate',
-          label: 'Support a targeted rate to invest in environmental initiatives such as tackling kauri dieback. Less death. More trees.',
-          checked: true,
-        }
-      },
       transportCheckboxes: {
         lightRail: {
           key: 'lightRail',
@@ -126,19 +109,6 @@ class Projects extends Component {
           <div>
             The Long Term Plan sets out the 10 year budget for Auckland.
           </div>
-        </div>
-        <div>
-          <div>
-            There are three big questions Auckland Council is asking that may means you have to pay a little extra for improvements. We think these are good ideas, do you agree?
-          </div>
-          {Object.keys(this.state.bigChoices).map(bigChoicesCheckboxKey => {
-            return <Checkbox
-            checked={this.state.bigChoices[bigChoicesCheckboxKey].checked}
-            onCheck={(event, isInputChecked) => this.updateCheckbox(isInputChecked, 'bigChoices', bigChoicesCheckboxKey)}
-            key={bigChoicesCheckboxKey}
-            label={this.state.bigChoices[bigChoicesCheckboxKey].label}
-            />
-          })}
         </div>
         <div>
           Auckland Council wants to know your views about where council should spend your money. Three key areas where council spends money are transport, housing (including community facilities) and the environment.
