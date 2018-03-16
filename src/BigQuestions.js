@@ -6,7 +6,8 @@ class BigQuestions extends React.Component {
     const styles = {
       bigQuestionsText: {
         fontSize: '60px',
-        color: 'white'
+        color: 'white',
+        paddingTop: '100px'
       },
       container: {
         display: 'flex',

@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react';
 
-export default class footer extends React.Component {
+import ShareButtons from './ShareButtons';
+
+export default class footer extends Component {
   render() {
     const styles = {
       footer: {
@@ -9,11 +11,13 @@ export default class footer extends React.Component {
         alignItems: 'center',
         padding: '17px',
         color:"snow",
+        flexDirection: 'column'
       }
     };
 
     return(
       <div style={styles.footer}>
+        <ShareButtons/>
         <div >Authorised by Leroy Beckett, Generation Zero, 295 Karangahape Road, AKL</div>
       </div>
     );
