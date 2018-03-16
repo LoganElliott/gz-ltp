@@ -14,7 +14,7 @@ import {
 } from 'react-share';
 
 const shareUrl = 'https://fixour.city';
-const title = 'Fix Our City';
+const title = 'I just submitted to #fixourcity. You should too';
 const hashtag = '#fixourcity';
 
 class ShareButtons extends Component {
