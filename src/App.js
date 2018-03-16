@@ -9,6 +9,7 @@ import UserInformation from "./UserInformation";
 import fuelTax from './images/Fuel-Tax.png';
 import waterLevy from './images/Water-Levy.png';
 import treeLevy from './images/Tree-Levy.png';
+import GZLogo from './images/icons/gz-logo.png';
 
 class App extends Component {
   constructor(props){
@@ -271,15 +272,25 @@ class App extends Component {
 
   render() {
     const styles = {
+      gzLogo: {
+        width: '400px'
+      },
       title: {
-        fontSize: '24px',
+        fontSize: '50px',
+        color: 'white',
+      },
+      subTitle: {
+        fontSize: '18px',
+        color: 'white',
+        fontFamily: 'Gotham-Light',
       },
       container: {
         display: 'flex',
         flexDirection: 'column',
-        margin: '50px 50px',
+        margin: '50px',
+        alignItems: 'center',
+        justifyContent: 'center',
       },
-
       submitLabel: {
         fontSize: '24px',
       }
@@ -287,12 +298,14 @@ class App extends Component {
 
     return (
       <div className="App" style={styles.container}>
-        <div style={styles.title}>
-          <h1>Long Term Plan 2018 </h1>
-          <h2>- Fund Our City- </h2>
+        <div>
+          <img style={styles.gzLogo} src={GZLogo} alt={'Generation Zero Logo'}/>
+          <div style={styles.title}>FIX OUR CITY </div>
+          <div style={styles.subTitle}> QUICK SUBMIT ON THE AUCKLAND LONG TERM PLAN 2018 </div>
         </div>
         <div>
-          Auckland Council is consulting of their plans for our city over the next 10 years. This is chance once every 3 years where we get to put forward our vision to shape the future of our city. We’ve made it really easy for you to submit on key issues, just follow our form below.
+          Auckland Council is consulting of their plans for our city over the next 10 years.
+          We’ve made it really easy for you to submit on key issues, just follow our form below.
         </div>
         <UserInformation
           userInformation={this.state.userInformation}
@@ -310,7 +323,7 @@ class App extends Component {
         <Projects
           projects={this.state.projects}
           updateCheckbox={(sectionKey, checkboxKey) => this.updateProjectCheckbox(sectionKey, checkboxKey)}
-          updateInputField={(textBoxKey, value) => this.updateInputField(textBoxKey, value)}
+          updateProjectsInputField={(textBoxKey, value) => this.updateProjectsInputField(textBoxKey, value)}
         />
         <div>
           <div>

@@ -32,6 +32,9 @@ class BigQuestions extends React.Component {
         fontFamily: 'Gotham-Light',
         color: 'white',
         padding: '10px'
+      },
+      labelStyle: {
+        fontFamily: 'Gotham-Light',
       }
     };
 
@@ -53,6 +56,7 @@ class BigQuestions extends React.Component {
                   onCheck={() => this.props.updateCheckbox('bigChoices', bigChoicesCheckboxKey)}
                   label={'I agree with this'}
                   style={styles.checkbox}
+                  labelStyle={styles.labelStyle}
                 />
               </div>)
           })}
