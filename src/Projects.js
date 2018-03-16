@@ -48,23 +48,6 @@ class Projects extends Component {
   }
 
   render() {
-    const styles = {
-      chipStyle: {
-        whiteSpace: 'pre-wrap',
-      },
-      chipContainer: {
-        display: 'flex',
-        flexWrap: 'wrap',
-      },
-      otherContainer: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        margin: '20px',
-      },
-    };
-
     return (
       <div>
         <div>
