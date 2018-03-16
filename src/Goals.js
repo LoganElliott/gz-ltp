@@ -34,7 +34,7 @@ class Goals extends Component {
         padding: '10px',
       },
       checkbox: {
-        maxWidth: '350px',
+        maxWidth: '300px',
       },
       checkboxContainer: {
         display: 'flex',
@@ -45,8 +45,8 @@ class Goals extends Component {
         margin: '20px',
       },
       icon: {
-        width: '400px',
-        height: '400px',
+        width: '300px',
+        height: '300px',
       },
       labelStyle: {
         fontFamily: 'Gotham-Light',

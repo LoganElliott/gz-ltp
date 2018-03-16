@@ -121,6 +121,12 @@ class App extends Component {
         extraEnvironmentalProjects: '',
         extraHousingProjects: '',
         otherComments: '',
+        maoriWards: {
+          key: 'maoriWards',
+          label: 'We think for Auckland to really thrive everyone needs to be included in decision making: Establish Māori Wards. Set up a representative consultation panel.',
+          checked: true,
+          type: 'maoriWards',
+        },
       },
       goals: {
         transportCheck: true,
@@ -133,6 +139,7 @@ class App extends Component {
     this.updateProjectCheckbox.bind(this);
     this.updateGoalsCheckbox.bind(this);
     this.updateUserInformationCheckbox.bind(this);
+    this.updateMaoriWardsCheckbox.bind(this);
     this.updateProjectsInputField.bind(this);
     this.updateUserInformationInputField.bind(this);
     this.submit.bind(this);
@@ -190,6 +197,18 @@ class App extends Component {
         userInformation: {
           ...oldState.userInformation,
           receiveGZEmail: !oldState.userInformation.receiveGZEmail,
+        }
+      };
+    });
+  }
+
+  updateMaoriWardsCheckbox() {
+    this.setState((oldState) => {
+      return {
+        ...oldState,
+        maoriWards: {
+          ...oldState.maoriWards,
+          checked: !oldState.maoriWards.checked,
         }
       };
     });
@@ -296,6 +315,11 @@ class App extends Component {
             key: this.state.projects.notProceedCheckboxes.millRoad.key,
             checked: this.state.projects.notProceedCheckboxes.millRoad.checked,
             type: this.state.projects.notProceedCheckboxes.millRoad.type,
+          },
+          {
+            key: this.state.projects.maoriWards.key,
+            checked: this.state.projects.maoriWards.checked,
+            type: this.state.projects.maoriWards.type,
           }
 
         ],
@@ -321,7 +345,7 @@ class App extends Component {
   render() {
     const styles = {
       gzLogo: {
-        width: '400px'
+        width: '320px'
       },
       title: {
         fontSize: '50px',
@@ -343,7 +367,7 @@ class App extends Component {
       container: {
         display: 'flex',
         flexDirection: 'column',
-        margin: '50px',
+        margin: '10px',
         alignItems: 'center',
         justifyContent: 'center',
       },
@@ -380,6 +404,7 @@ class App extends Component {
           projects={this.state.projects}
           updateCheckbox={(sectionKey, checkboxKey) => this.updateProjectCheckbox(sectionKey, checkboxKey)}
           updateProjectsInputField={(textBoxKey, value) => this.updateProjectsInputField(textBoxKey, value)}
+          updateMaoriWardsCheckbox={() => this.updateMaoriWardsCheckbox()}
         />
         <div>
           <div>

@@ -9,7 +9,7 @@ class Projects extends Component {
         color: 'white'
       },
       title: {
-        fontSize: '60px',
+        fontSize: '55px',
         padding: '10px',
       },
       subTitle: {
@@ -18,18 +18,18 @@ class Projects extends Component {
         fontFamily: 'Gotham-Light',
       },
       checkbox: {
-        maxWidth: '400px',
+        maxWidth: '320px',
         margin: '10px',
       },
       textField: {
-        maxWidth: '350px',
+        maxWidth: '300px',
         margin: '10px 0 10px 0'
       },
       labelStyle: {
         fontFamily: 'Gotham-Light',
       },
       section: {
-        maxWidth: '400px',
+        maxWidth: '320px',
         fontFamily: 'Gotham-Light',
         padding: '10px',
       },
@@ -139,6 +139,16 @@ class Projects extends Component {
               onChange={(event, newValue) => this.props.updateProjectsInputField('extraHousingProjects', newValue)}
               style={styles.textField}
               hintStyle={styles.labelStyle}
+            />
+          </div>
+          <div style={styles.section}>
+            <Checkbox
+              checked={this.props.projects.maoriWards.checked}
+              onCheck={() => this.props.updateMaoriWardsCheckbox()}
+              key={this.props.projects.maoriWards.key}
+              label={this.props.projects.maoriWards.label}
+              style={styles.checkbox}
+              labelStyle={styles.labelStyle}
             />
           </div>
           <div  style={styles.section}>

@@ -23,7 +23,7 @@ class UserInformation extends React.Component {
         margin: '10px'
       },
       checkbox: {
-        maxWidth: '500px',
+        maxWidth: '320px',
         margin: '10px'
       },
       labelStyle: {
