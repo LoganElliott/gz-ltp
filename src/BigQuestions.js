@@ -1,58 +1,11 @@
 import React from 'react'
 import Checkbox from 'material-ui/Checkbox';
-import fuelTax from './images/Fuel-Tax.png.png';
-import waterLevy from './images/Water-Levy.png';
-import treeLevy from './images/Tree-Levy.png';
 
 class BigQuestions extends React.Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      bigChoices: {
-        fossilFuelTax: {
-          key: 'fossilFuelTax',
-          label: '10c per litre “Fossil Fuel Tax” to fund the public transport Auckland desperately needs. Less pollution & traffic. More transport freedom.',
-          checked: true,
-          image: fuelTax
-        },
-        waterInfrastructureTax: {
-          key: 'waterInfrastructureTax',
-          label: 'Support a targeted rate to speed up the delivery of cleaner harbours, beaches and streams. Less poo. More swimming.',
-          checked: true,
-          image: waterLevy,
-        },
-        environmentTargetedRate: {
-          key: 'environmentTargetedRate',
-          label: 'Support a targeted rate to invest in environmental initiatives such as tackling kauri dieback. Less death. More trees.',
-          checked: true,
-          image: treeLevy,
-        }
-      },
-    };
-
-    this.updateCheckbox.bind(this);
-  }
-
-  updateCheckbox(isInputChecked, sectionKey, checkboxKey) {
-    this.setState((oldState) => {
-      let checkboxToUpdate = oldState[sectionKey][checkboxKey];
-      checkboxToUpdate.checked = !checkboxToUpdate.checked;
-
-      return {
-        ...oldState,
-        [sectionKey]: {
-          ...oldState[sectionKey],
-          [checkboxKey]: checkboxToUpdate,
-        }
-      };
-    });
-  }
-
   render() {
     const styles = {
       bigQuestionsText: {
-        fontSize: '50px',
+        fontSize: '60px',
         color: 'white'
       },
       container: {
@@ -65,7 +18,9 @@ class BigQuestions extends React.Component {
       },
       bigQuestions: {
         display: 'flex',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
       },
       image: {
         width: '300px',
@@ -79,6 +34,9 @@ class BigQuestions extends React.Component {
         fontFamily: 'Gotham-Light',
         color: 'white',
         padding: '10px'
+      },
+      labelStyle: {
+        fontFamily: 'Gotham-Light',
       }
     };
 
@@ -88,18 +46,19 @@ class BigQuestions extends React.Component {
          3 Big Questions
         </div>
         <div style={styles.bigQuestions}>
-          {Object.keys(this.state.bigChoices).map(bigChoicesCheckboxKey => {
+          {Object.keys(this.props.bigChoices).map(bigChoicesCheckboxKey => {
             return (
               <div style={styles.container} key={bigChoicesCheckboxKey}>
-                <img style={styles.image} src={this.state.bigChoices[bigChoicesCheckboxKey].image} alt={this.state.bigChoices[bigChoicesCheckboxKey].label}/>
+                <img style={styles.image} src={this.props.bigChoices[bigChoicesCheckboxKey].image} alt={this.props.bigChoices[bigChoicesCheckboxKey].label}/>
                 <div style={styles.text}>
-                  -{this.state.bigChoices[bigChoicesCheckboxKey].label}
+                  -{this.props.bigChoices[bigChoicesCheckboxKey].label}
                 </div>
                 <Checkbox
-                  checked={this.state.bigChoices[bigChoicesCheckboxKey].checked}
-                  onCheck={(event, isInputChecked) => this.updateCheckbox(isInputChecked, 'bigChoices', bigChoicesCheckboxKey)}
+                  checked={this.props.bigChoices[bigChoicesCheckboxKey].checked}
+                  onCheck={() => this.props.updateCheckbox('bigChoices', bigChoicesCheckboxKey)}
                   label={'I agree with this'}
                   style={styles.checkbox}
+                  labelStyle={styles.labelStyle}
                 />
               </div>)
           })}
