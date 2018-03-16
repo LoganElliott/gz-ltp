@@ -205,9 +205,13 @@ class App extends Component {
 
   async submit(){
     try {
+      const username = 'gz_user';
+      const password = 'ks27N6FzkmrAWWAMBtpl';
+
       let myHeaders = new Headers();
       myHeaders.append("Access-Control-Allow-Origin", "*");
       myHeaders.append('Content-Type', 'application/json');
+      myHeaders.append('Authorization', 'Basic ' + btoa(username + ":" + password));
 
       const dataToSend = {
         userInformation: {
