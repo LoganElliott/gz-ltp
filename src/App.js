@@ -1,30 +1,25 @@
 import React, { Component } from 'react';
-import gzLogo from './images/icons/GZ-logo.png';
 import './App.css';
 import Goals from './Goals';
 import Projects from './Projects';
-import TextField from 'material-ui/TextField';
-import Checkbox from 'material-ui/Checkbox';
+
 import RaisedButton from 'material-ui/RaisedButton';
+import Footer from './Footer';
+import UserInformation from "./UserInformation";
 
 class App extends Component {
   render() {
     const styles = {
+      title: {
+        fontSize: '24px',
+        color: '#E8DAD8'
+      },
       container: {
         display: 'flex',
         flexDirection: 'column',
         margin: '50px 50px',
       },
-      emailContainer: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        margin: '20px',
-      },
-      checkbox: {
-        maxWidth: '500px'
-      },
+
       submitLabel: {
         fontSize: '24px',
       }
@@ -32,31 +27,16 @@ class App extends Component {
 
     return (
       <div className="App" style={styles.container}>
-        <img src={gzLogo} alt='Generation Zero Logo'/>
+        <div style={styles.title}>
+          <h1>Long Term Plan 2018 </h1>
+          <h2>- Fund Our City- </h2>
+        </div>
         <div>
           Auckland Council is consulting of their plans for our city over the next 10 years. This is chance once every 3 years where we get to put forward our vision to shape the future of our city. We’ve made it really easy for you to submit on key issues, just follow our form below.
         </div>
-        <div style={styles.emailContainer}>
-          <TextField
-            floatingLabelText="First Name"
-          />
-          <TextField
-            floatingLabelText="Last Name"
-          />
-          <TextField
-            floatingLabelText="Enter email"
-          />
-            <TextField
-              floatingLabelText="Local Board (if known)"
-            />
-            <Checkbox
-              label='Do you want to receive email updates from Generation Zero?'
-              style={styles.checkbox}
-            />
-        </div>
+        <UserInformation/>
         <Goals/>
         <Projects/>
-
         <div>
           <div>
             <RaisedButton
@@ -66,6 +46,7 @@ class App extends Component {
             />
           </div>
         </div>
+        <Footer/>
       </div>
     );
   }
