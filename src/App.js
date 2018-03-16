@@ -8,11 +8,6 @@ import Footer from './Footer';
 import UserInformation from "./UserInformation";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-  }
-
   render() {
     const styles = {
       title: {

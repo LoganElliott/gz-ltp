@@ -1,10 +1,6 @@
 import React from 'react'
 
 export default class footer extends React.Component {
-  constructor(context) {
-    super(context);
-  }
-
   render() {
     const styles = {
       footer: {
@@ -18,7 +14,7 @@ export default class footer extends React.Component {
 
     return(
       <div style={styles.footer}>
-        <div >Authorised by Leroy Beckett, Generation Zero, 21 Shaddock Street, AKL</div>
+        <div >Authorised by Leroy Beckett, Generation Zero, 295 Karangahape Road, AKL</div>
       </div>
     );
   }
