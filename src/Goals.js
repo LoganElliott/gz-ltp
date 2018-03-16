@@ -41,21 +41,30 @@ class Goals extends Component {
     };
 
     return (
-      <div className="App">
+      <div>
+        <div>
+          Auckland Plan Goals
+        </div>
+        <div>
+          The Auckland Plan sets out the vision for our city in 2050. However, then plan is not bold enough to meet our future challenges, and is weak in some important areas. We have come up with new suggested goals for what we want our city to be like in 2050. Let us know if you support them:
+        </div>
         <div>
           <img src={transportIcon} alt='Transport section icon'/>
           <h2>
             Transport
           </h2>
           <div style={styles.goal}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Reduce transport emissions to zero
           </div>
           <div style={styles.goal}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Make sure public transport is affordable for all Aucklanders
           </div>
           <div style={styles.goal}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Half of all trips should be by sustainable transport in 10 years
           </div>
+          <div style={styles.goal}>
+            Vision Zero - aim for no preventable deaths on our roads & streets by 2050.
+        </div>
           <div style={styles.checkboxContainer}>
             <Checkbox
               label={"I support these Transport Goals"}
@@ -71,13 +80,16 @@ class Goals extends Component {
             Housing
           </h2>
           <div style={styles.goal}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Provide affordable housing for every Aucklander
           </div>
           <div style={styles.goal}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Stop sprawl by ensuring at least 80% of growth is within the existing area
           </div>
           <div style={styles.goal}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Focus new housing around rapid transit.
+          </div>
+          <div style={styles.goal}>
+            Ensure new housing includes provision of quality public spaces & community facilities.
           </div>
           <div style={styles.checkboxContainer}>
             <Checkbox
@@ -94,13 +106,16 @@ class Goals extends Component {
             Environment
           </h2>
           <div style={styles.goal}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Zero Carbon by 2050
           </div>
           <div style={styles.goal}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Protect & restore our natural environment, including significant reforestation.
           </div>
           <div style={styles.goal}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Ensure Auckland’s harbours are clean & swimmable.
+          </div>
+          <div style={styles.goal}>
+            Zero Waste
           </div>
           <div style={styles.checkboxContainer}>
             <Checkbox
