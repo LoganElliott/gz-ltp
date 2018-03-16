@@ -381,7 +381,7 @@ class App extends Component {
         <div>
           <img style={styles.gzLogo} src={GZLogo} alt={'Generation Zero Logo'}/>
           <div style={styles.title}>FIX OUR CITY </div>
-          <div style={styles.subTitle}> QUICK SUBMIT ON THE AUCKLAND LONG TERM PLAN 2018 </div>
+          <div style={styles.subTitle}> QUICK SUBMIT ON THE AUCKLAND PLAN AND LONG TERM PLAN 2018 </div>
         </div>
         <div style={styles.intro}>
           Auckland Council is consulting on their plans for our city over the next 10 years.
