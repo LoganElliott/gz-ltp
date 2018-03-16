@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react';
+
 import ShareButtons from './ShareButtons';
 
-export default class footer extends React.Component {
+export default class footer extends Component {
   render() {
     const styles = {
       footer: {

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Component } from 'react';
+
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -16,7 +17,7 @@ const shareUrl = 'https://fixour.city';
 const title = 'Fix Our City';
 const hashtag = '#fixourcity';
 
-class ShareButtons extends React {
+class ShareButtons extends Component {
   render() {
     const styles = {
       container: {
