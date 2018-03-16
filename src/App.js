@@ -26,19 +26,19 @@ class App extends Component {
       bigChoices: {
         fossilFuelTax: {
           key: 'fossilFuelTax',
-          label: '10c per litre “Fossil Fuel Tax” to fund the public transport Auckland desperately needs. Less pollution & traffic. More transport freedom.',
+          label: 'Do you support a 10c per litre “Fossil Fuel Tax” to fund the public transport Auckland desperately needs? Less pollution & traffic. More transport freedom.',
           checked: true,
           image: fuelTax
         },
         waterInfrastructureTax: {
           key: 'waterInfrastructureTax',
-          label: 'Support a targeted rate to speed up the delivery of cleaner harbours, beaches and streams. Less poo. More swimming.',
+          label: 'Do you support a targeted rate to speed up the delivery of cleaner harbours, beaches and streams? Less poo. More swimming.',
           checked: true,
           image: waterLevy,
         },
         environmentTargetedRate: {
           key: 'environmentTargetedRate',
-          label: 'Support a targeted rate to invest in environmental initiatives such as tackling kauri dieback. Less death. More trees.',
+          label: 'Do you support a targeted rate to invest in environmental initiatives such as tackling kauri dieback? Less death. More trees.',
           checked: true,
           image: treeLevy,
         }
@@ -121,6 +121,12 @@ class App extends Component {
         extraEnvironmentalProjects: '',
         extraHousingProjects: '',
         otherComments: '',
+        maoriWards: {
+          key: 'maoriWards',
+          label: 'We think for Auckland to really thrive everyone needs to be included in decision making: Establish Māori Wards. Set up a representative consultation panel.',
+          checked: true,
+          type: 'maoriWards',
+        },
       },
       goals: {
         transportCheck: true,
@@ -133,6 +139,7 @@ class App extends Component {
     this.updateProjectCheckbox.bind(this);
     this.updateGoalsCheckbox.bind(this);
     this.updateUserInformationCheckbox.bind(this);
+    this.updateMaoriWardsCheckbox.bind(this);
     this.updateProjectsInputField.bind(this);
     this.updateUserInformationInputField.bind(this);
     this.submit.bind(this);
@@ -190,6 +197,18 @@ class App extends Component {
         userInformation: {
           ...oldState.userInformation,
           receiveGZEmail: !oldState.userInformation.receiveGZEmail,
+        }
+      };
+    });
+  }
+
+  updateMaoriWardsCheckbox() {
+    this.setState((oldState) => {
+      return {
+        ...oldState,
+        maoriWards: {
+          ...oldState.maoriWards,
+          checked: !oldState.maoriWards.checked,
         }
       };
     });
@@ -296,6 +315,11 @@ class App extends Component {
             key: this.state.projects.notProceedCheckboxes.millRoad.key,
             checked: this.state.projects.notProceedCheckboxes.millRoad.checked,
             type: this.state.projects.notProceedCheckboxes.millRoad.type,
+          },
+          {
+            key: this.state.projects.maoriWards.key,
+            checked: this.state.projects.maoriWards.checked,
+            type: this.state.projects.maoriWards.type,
           }
 
         ],
@@ -321,7 +345,7 @@ class App extends Component {
   render() {
     const styles = {
       gzLogo: {
-        width: '400px'
+        width: '320px'
       },
       title: {
         fontSize: '50px',
@@ -343,7 +367,7 @@ class App extends Component {
       container: {
         display: 'flex',
         flexDirection: 'column',
-        margin: '50px',
+        margin: '10px',
         alignItems: 'center',
         justifyContent: 'center',
       },
@@ -360,7 +384,7 @@ class App extends Component {
           <div style={styles.subTitle}> QUICK SUBMIT ON THE AUCKLAND LONG TERM PLAN 2018 </div>
         </div>
         <div style={styles.intro}>
-          Auckland Council is consulting of their plans for our city over the next 10 years.
+          Auckland Council is consulting on their plans for our city over the next 10 years.
           We’ve made it really easy for you to submit on key issues, just follow our form below.
         </div>
         <UserInformation
@@ -380,6 +404,7 @@ class App extends Component {
           projects={this.state.projects}
           updateCheckbox={(sectionKey, checkboxKey) => this.updateProjectCheckbox(sectionKey, checkboxKey)}
           updateProjectsInputField={(textBoxKey, value) => this.updateProjectsInputField(textBoxKey, value)}
+          updateMaoriWardsCheckbox={() => this.updateMaoriWardsCheckbox()}
         />
         <div>
           <div>
