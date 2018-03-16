@@ -28,6 +28,13 @@ class UserInformation extends React.Component {
       },
       labelStyle: {
         fontFamily: 'Gotham-Light',
+        color: '#B0A1D6',
+      },
+      checkboxLabel: {
+        fontFamily: 'Gotham-Light',
+      },
+      floatingLabelStyleFocus: {
+        color: '#EDD94F',
       }
     };
 
@@ -39,7 +46,8 @@ class UserInformation extends React.Component {
             value={this.props.userInformation.firstName}
             onChange={(event, newValue) => this.props.updateUserInformationInputField('firstName', newValue)}
             floatingLabelStyle={styles.labelStyle}
-             style={styles.field}
+            style={styles.field}
+            floatingLabelFocusStyle={styles.floatingLabelStyleFocus}
           />
           <TextField
             floatingLabelText="Last Name"
@@ -47,6 +55,7 @@ class UserInformation extends React.Component {
             onChange={(event, newValue) => this.props.updateUserInformationInputField('lastName', newValue)}
             floatingLabelStyle={styles.labelStyle}
             style={styles.field}
+            floatingLabelFocusStyle={styles.floatingLabelStyleFocus}
           />
           <TextField
             floatingLabelText="Enter email"
@@ -55,6 +64,7 @@ class UserInformation extends React.Component {
             type={'email'}
             floatingLabelStyle={styles.labelStyle}
             style={styles.field}
+            floatingLabelFocusStyle={styles.floatingLabelStyleFocus}
           />
           <TextField
             floatingLabelText="Local Board (if known)"
@@ -62,6 +72,7 @@ class UserInformation extends React.Component {
             onChange={(event, newValue) => this.props.updateUserInformationInputField('localBoard', newValue)}
             floatingLabelStyle={styles.labelStyle}
             style={styles.field}
+            floatingLabelFocusStyle={styles.floatingLabelStyleFocus}
           />
           </div>
         <div>
@@ -70,7 +81,7 @@ class UserInformation extends React.Component {
             style={styles.checkbox}
             checked={this.props.userInformation.receiveGZEmail}
             onCheck={() => this.props.updateUserInformationCheckbox()}
-            labelStyle={styles.labelStyle}
+            labelStyle={styles.checkboxLabel}
           />
         </div>
       </div>
