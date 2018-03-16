@@ -29,7 +29,7 @@ class Goals extends Component {
         fontFamily: 'Gotham-Light',
       },
       goalHeader: {
-        fontSize: '25px',
+        fontSize: '40px',
         fontFamily: 'Gotham-Bold',
         padding: '10px',
       },

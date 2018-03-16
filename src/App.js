@@ -26,19 +26,19 @@ class App extends Component {
       bigChoices: {
         fossilFuelTax: {
           key: 'fossilFuelTax',
-          label: '10c per litre “Fossil Fuel Tax” to fund the public transport Auckland desperately needs. Less pollution & traffic. More transport freedom.',
+          label: 'Do you support a 10c per litre “Fossil Fuel Tax” to fund the public transport Auckland desperately needs? Less pollution & traffic. More transport freedom.',
           checked: true,
           image: fuelTax
         },
         waterInfrastructureTax: {
           key: 'waterInfrastructureTax',
-          label: 'Support a targeted rate to speed up the delivery of cleaner harbours, beaches and streams. Less poo. More swimming.',
+          label: 'Do you support a targeted rate to speed up the delivery of cleaner harbours, beaches and streams? Less poo. More swimming.',
           checked: true,
           image: waterLevy,
         },
         environmentTargetedRate: {
           key: 'environmentTargetedRate',
-          label: 'Support a targeted rate to invest in environmental initiatives such as tackling kauri dieback. Less death. More trees.',
+          label: 'Do you support a targeted rate to invest in environmental initiatives such as tackling kauri dieback? Less death. More trees.',
           checked: true,
           image: treeLevy,
         }
@@ -360,7 +360,7 @@ class App extends Component {
           <div style={styles.subTitle}> QUICK SUBMIT ON THE AUCKLAND LONG TERM PLAN 2018 </div>
         </div>
         <div style={styles.intro}>
-          Auckland Council is consulting of their plans for our city over the next 10 years.
+          Auckland Council is consulting on their plans for our city over the next 10 years.
           We’ve made it really easy for you to submit on key issues, just follow our form below.
         </div>
         <UserInformation
