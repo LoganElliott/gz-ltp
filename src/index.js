@@ -10,9 +10,9 @@ const muiTheme = getMuiTheme({
   ...darkBaseTheme,
   fontFamily: 'Gotham-Bold',
   palette: {
-    textColor: '#E8DAD8',
-
-  },
+    primary1Color: '#EDD94F',
+    textColor: '#FFF'
+  }
 });
 
 ReactDOM.render(

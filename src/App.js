@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Goals from './Goals';
 import Projects from './Projects';
-
+import BigQuestions from './BigQuestions';
 import RaisedButton from 'material-ui/RaisedButton';
 import Footer from './Footer';
 import UserInformation from "./UserInformation";
@@ -12,7 +12,6 @@ class App extends Component {
     const styles = {
       title: {
         fontSize: '24px',
-        color: '#E8DAD8'
       },
       container: {
         display: 'flex',
@@ -35,6 +34,7 @@ class App extends Component {
           Auckland Council is consulting of their plans for our city over the next 10 years. This is chance once every 3 years where we get to put forward our vision to shape the future of our city. We’ve made it really easy for you to submit on key issues, just follow our form below.
         </div>
         <UserInformation/>
+        <BigQuestions/>
         <Goals/>
         <Projects/>
         <div>
