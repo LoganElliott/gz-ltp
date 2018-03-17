@@ -269,69 +269,18 @@ class App extends Component {
         transportCheck: this.state.goals.transportCheck,
         housingCheck: this.state.goals.housingCheck,
         environmentCheck: this.state.goals.environmentCheck,
-        checkboxes: [
-          {
-            key: this.state.projects.transportCheckboxes.lightRail.key,
-            checked: this.state.projects.transportCheckboxes.lightRail.checked,
-            type: this.state.projects.transportCheckboxes.lightRail.type,
-          },
-          {
-            key: this.state.projects.transportCheckboxes.busway.key,
-            checked: this.state.projects.transportCheckboxes.busway.checked,
-            type: this.state.projects.transportCheckboxes.busway.type,
-          },
-          {
-            key: this.state.projects.transportCheckboxes.frequentRail.key,
-            checked: this.state.projects.transportCheckboxes.frequentRail.checked,
-            type: this.state.projects.transportCheckboxes.frequentRail.type,
-          },
-          {
-            key: this.state.projects.transportCheckboxes.cycleNetwork.key,
-            checked: this.state.projects.transportCheckboxes.cycleNetwork.checked,
-            type: this.state.projects.transportCheckboxes.cycleNetwork.type,
-          },
-          {
-            key: this.state.projects.transportCheckboxes.frequentBus.key,
-            checked: this.state.projects.transportCheckboxes.frequentBus.checked,
-            type: this.state.projects.transportCheckboxes.frequentBus.type,
-          },
-          {
-            key: this.state.projects.transportCheckboxes.safeStreets.key,
-            checked: this.state.projects.transportCheckboxes.safeStreets.checked,
-            type: this.state.projects.transportCheckboxes.safeStreets.type,
-          },
-          {
-            key: this.state.projects.transportCheckboxes.safetyUpgrades.key,
-            checked: this.state.projects.transportCheckboxes.safetyUpgrades.checked,
-            type: this.state.projects.transportCheckboxes.safetyUpgrades.type,
-          },
-          {
-            key: this.state.projects.housingCheckboxes.communityFunding.key,
-            checked: this.state.projects.housingCheckboxes.communityFunding.checked,
-            type: this.state.projects.housingCheckboxes.communityFunding.type,
-          },
-          {
-            key: this.state.projects.housingCheckboxes.publicSpaces.key,
-            checked: this.state.projects.housingCheckboxes.publicSpaces.checked,
-            type: this.state.projects.housingCheckboxes.publicSpaces.type,
-          },
-          {
-            key: this.state.projects.notProceedCheckboxes.lincolnRoad.key,
-            checked: this.state.projects.notProceedCheckboxes.lincolnRoad.checked,
-            type: this.state.projects.notProceedCheckboxes.lincolnRoad.type,
-          },
-          {
-            key: this.state.projects.notProceedCheckboxes.millRoad.key,
-            checked: this.state.projects.notProceedCheckboxes.millRoad.checked,
-            type: this.state.projects.notProceedCheckboxes.millRoad.type,
-          },
-          {
-            key: this.state.projects.maoriWards.key,
-            checked: this.state.projects.maoriWards.checked,
-            type: this.state.projects.maoriWards.type,
-          }
-
-        ],
+        lightRailCheck: this.state.projects.transportCheckboxes.lightRail.checked,
+        buswayCheck: this.state.projects.transportCheckboxes.busway.checked,
+        frequentRailCheck: this.state.projects.transportCheckboxes.frequentRail.checked,
+        cycleNetworkCheck: this.state.projects.transportCheckboxes.cycleNetwork.checked,
+        frequentBusCheck: this.state.projects.transportCheckboxes.frequentBus.checked,
+        safeStreetsCheck: this.state.projects.transportCheckboxes.safeStreets.checked,
+        safetyUpgradesCheck: this.state.projects.transportCheckboxes.safetyUpgrades.checked,
+        communityFundingCheck: this.state.projects.housingCheckboxes.communityFunding.checked,
+        publicSpacesCheck: this.state.projects.housingCheckboxes.publicSpaces.checked,
+        lincolnRoadCheck: this.state.projects.notProceedCheckboxes.lincolnRoad.checked,
+        millRoadCheck: this.state.projects.notProceedCheckboxes.millRoad.checked,
+        maoriWards: this.state.projects.maoriWards.checked,
         extraTransportProjectsSupport: this.state.projects.extraTransportProjectsSupport,
         extraTransportProjectsDoNotSupport: this.state.projects.extraTransportProjectsDoNotSupport,
         extraEnvironmentalProjects: this.state.projects.extraEnvironmentalProjects,
