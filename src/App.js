@@ -132,7 +132,8 @@ class App extends Component {
         transportCheck: true,
         housingCheck: true,
         environmentCheck: true,
-      }
+      },
+      submitError: false,
     };
 
     this.updateCheckbox.bind(this);
@@ -239,6 +240,14 @@ class App extends Component {
   }
 
   async submit(){
+    if(!this.state.userInformation.firstName || !this.state.userInformation.lastName || !this.state.userInformation.email)
+    {
+      this.setState({submitError: true});
+      return;
+    } else {
+      this.setState({submitError: false})
+    }
+
     try {
       const username = 'gz_user';
       const password = 'ks27N6FzkmrAWWAMBtpl';
@@ -373,6 +382,9 @@ class App extends Component {
       },
       submitLabel: {
         fontSize: '24px',
+      },
+      submitError: {
+        color: 'red',
       }
     };
 
@@ -414,6 +426,9 @@ class App extends Component {
               backgroundColor={'rgb(103, 189, 176)'}
               onClick={() => this.submit()}
             />
+            {this.state.submitError ? <div style={styles.submitError}>
+              Please enter your first and last name and your email to submit
+            </div> : null}
           </div>
         </div>
         <Footer/>
