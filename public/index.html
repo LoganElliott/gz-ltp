@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115873601-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115873601-1');
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
@@ -28,6 +38,26 @@
     <meta property="og:description" content="Our city has a lot of problems. We need your help to fix them. Auckland Council are currently coming up with their plans of how to address those problems over the next 10 and 30 years. Tell them how. " />
   </head>
   <body style="background-color: #604B8A;">
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1197314710403033',
+        xfbml      : true,
+        version    : 'v2.12'
+      });
+
+      FB.AppEvents.logPageView();
+
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
   <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
