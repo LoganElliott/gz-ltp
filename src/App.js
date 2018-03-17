@@ -208,8 +208,8 @@ class App extends Component {
       return {
         ...oldState,
         maoriWards: {
-          ...oldState.maoriWards,
-          checked: !oldState.maoriWards.checked,
+          ...oldState.projects.maoriWards,
+          checked: !oldState.projects.maoriWards.checked,
         }
       };
     });
