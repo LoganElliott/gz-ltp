@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
 import './App.css';
 import Goals from './Goals';
 import Projects from './Projects';
@@ -134,6 +136,7 @@ class App extends Component {
         environmentCheck: true,
       },
       submitError: false,
+	open: false,
     };
 
     this.updateCheckbox.bind(this);
@@ -144,6 +147,8 @@ class App extends Component {
     this.updateProjectsInputField.bind(this);
     this.updateUserInformationInputField.bind(this);
     this.submit.bind(this);
+	this.handleOpen.bind(this);
+	this.handleClose.bind(this);
   }
 
   updateCheckbox(sectionKey, checkboxKey) {
@@ -295,10 +300,19 @@ class App extends Component {
       };
       const myRequest = new Request(`https://api.fixour.city/submissions`, myInit);
       await fetch(myRequest);
+	this.handleOpen();
     } catch(e) {
       console.log('Unable to send submission', e)
     }
   }
+
+handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+  };
 
   render() {
     const styles = {
@@ -334,8 +348,20 @@ class App extends Component {
       },
       submitError: {
         color: 'red',
-      }
+      },
+	dialog: {
+		color: 'black',
+	}
     };
+
+	const actions = [
+      <FlatButton
+        label="OK"
+        primary={true}
+        keyboardFocused={true}
+        onClick={this.handleClose}
+      />,
+    ];
 
     return (
       <div className="App" style={styles.container}>
@@ -380,6 +406,17 @@ class App extends Component {
             </div> : null}
           </div>
         </div>
+	<Dialog
+          title="Thanks for submitting"
+          actions={actions}
+          modal={false}
+          open={this.state.open}
+          onRequestClose={this.handleClose}
+	titleStyle={styles.dialog}
+	bodyStyle={styles.dialog}
+        >
+		Thank you for your submission we will deliver your responses to Auckland Council. You May receive confirmation from them once proccessed.
+	</Dialog>
         <Footer/>
       </div>
     );
