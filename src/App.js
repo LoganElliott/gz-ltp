@@ -269,22 +269,6 @@ class App extends Component {
         transportCheck: this.state.goals.transportCheck,
         housingCheck: this.state.goals.housingCheck,
         environmentCheck: this.state.goals.environmentCheck,
-        [this.state.projects.transportCheckboxes.lightRail.key]: this.state.projects.transportCheckboxes.lightRail.checked,
-        [this.state.projects.transportCheckboxes.busway.key]: this.state.projects.transportCheckboxes.busway.checked,
-        [this.state.projects.transportCheckboxes.frequentRail.key]: this.state.projects.transportCheckboxes.frequentRail.checked,
-        [this.state.projects.transportCheckboxes.cycleNetwork.key]: this.state.projects.transportCheckboxes.cycleNetwork.checked,
-        [this.state.projects.transportCheckboxes.frequentBus.key]: this.state.projects.transportCheckboxes.frequentBus.checked,
-        [this.state.projects.transportCheckboxes.safeStreets.key]: this.state.projects.transportCheckboxes.safeStreets.checked,
-        [this.state.projects.transportCheckboxes.safetyUpgrades.key]: this.state.projects.transportCheckboxes.safetyUpgrades.checked,
-        [this.state.projects.housingCheckboxes.communityFunding.key]: this.state.projects.housingCheckboxes.communityFunding.checked,
-        [this.state.projects.housingCheckboxes.publicSpaces.key]: this.state.projects.housingCheckboxes.publicSpaces.checked,
-        [this.state.projects.notProceedCheckboxes.lincolnRoad.key]: this.state.projects.notProceedCheckboxes.lincolnRoad.checked,
-        [this.state.projects.notProceedCheckboxes.millRoad.key]: this.state.projects.notProceedCheckboxes.millRoad.checked,
-        [this.state.projects.maoriWards.key]: this.state.projects.maoriWards.checked,
-        extraTransportProjectsSupport: this.state.projects.extraTransportProjectsSupport,
-        extraTransportProjectsDoNotSupport: this.state.projects.extraTransportProjectsDoNotSupport,
-        extraEnvironmentalProjects: this.state.projects.extraEnvironmentalProjects,
-        extraHousingProjects: this.state.projects.extraHousingProjects,
         otherComments: this.state.projects.otherComments,
       };
 
@@ -346,7 +330,7 @@ class App extends Component {
         </div>
         <div style={styles.intro}>
           Auckland Council is consulting on their plans for our city over the next 10 years.
-          We’ve made it really easy for you to submit on key issues, just follow our form below.
+          We’ve made it really easy for you to submit on key issues! Just follow our form below:
         </div>
         <UserInformation
           userInformation={this.state.userInformation}

@@ -60,7 +60,7 @@ class Goals extends Component {
           Auckland Plan Goals
         </div>
         <div style={styles.subTitle}>
-          The Auckland Plan sets out the vision for our city in 2050. However, then plan is not bold enough to meet our future challenges, and is weak in some important areas. We have come up with new suggested goals for what we want our city to be like in 2050. Let us know if you support them:
+          The Auckland Plan sets out the vision for our city in 2050. However, the plan is not bold enough to meet our future challenges and is weak in some important areas. We have come up with new suggested goals for what we want our city to be like in 2050. Let us know if you support them:
         </div>
         <div style={styles.goals}>
           <div style={styles.goalContainer}>
@@ -69,13 +69,13 @@ class Goals extends Component {
               Transport
             </div>
             <div style={styles.goal}>
-              Reduce transport emissions to zero
+              Reduce transport emissions to zero.
             </div>
             <div style={styles.goal}>
-              Make sure public transport is affordable for all Aucklanders
+              Make sure public transport is affordable for all Aucklanders.
             </div>
             <div style={styles.goal}>
-              Half of all trips should be by sustainable transport in 10 years
+              Half of all trips should be by sustainable transport in 10 years.
             </div>
             <div style={styles.goal}>
               Vision Zero - aim for no preventable deaths on our roads & streets by 2050.
@@ -96,10 +96,10 @@ class Goals extends Component {
               Housing
             </div>
             <div style={styles.goal}>
-              Provide affordable housing for every Aucklander
+              Provide affordable housing for every Aucklander.
             </div>
             <div style={styles.goal}>
-              Stop sprawl by ensuring at least 80% of growth is within the existing area
+              Stop sprawl by ensuring at least 80% of growth is within the existing area.
             </div>
             <div style={styles.goal}>
               Focus new housing around rapid transit.
@@ -123,7 +123,7 @@ class Goals extends Component {
               Environment
             </div>
             <div style={styles.goal}>
-              Zero Carbon by 2050
+              Zero Carbon by 2050.
             </div>
             <div style={styles.goal}>
               Protect & restore our natural environment, including significant reforestation.
@@ -132,7 +132,7 @@ class Goals extends Component {
               Ensure Auckland’s harbours are clean & swimmable.
             </div>
             <div style={styles.goal}>
-              Zero Waste
+              Zero Waste.
             </div>
             <div style={styles.checkboxContainer}>
               <Checkbox
