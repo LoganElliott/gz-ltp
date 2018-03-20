@@ -29,12 +29,12 @@ class BigQuestions extends React.Component {
       },
       checkbox: {
         maxWidth: '200px',
-        padding: '10px'
       },
       text: {
         fontFamily: 'Gotham-Light',
         color: 'white',
-        padding: '10px'
+        padding: '25px 10px 10px 10px',
+	height: '100px',
       },
       labelStyle: {
         fontFamily: 'Gotham-Light',
@@ -52,7 +52,7 @@ class BigQuestions extends React.Component {
               <div style={styles.container} key={bigChoicesCheckboxKey}>
                 <img style={styles.image} src={this.props.bigChoices[bigChoicesCheckboxKey].image} alt={this.props.bigChoices[bigChoicesCheckboxKey].label}/>
                 <div style={styles.text}>
-                  -{this.props.bigChoices[bigChoicesCheckboxKey].label}
+                  {this.props.bigChoices[bigChoicesCheckboxKey].label}
                 </div>
                 <Checkbox
                   checked={this.props.bigChoices[bigChoicesCheckboxKey].checked}
